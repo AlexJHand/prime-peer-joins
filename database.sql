@@ -107,3 +107,5 @@ VALUES (1, 3, 0),
 (7, 2, 4),
 (6, 3, 88),
 (6, 4, 3);
+
+-- 1. Get all customers and their addresses
