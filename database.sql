@@ -109,3 +109,35 @@ VALUES (1, 3, 0),
 (6, 4, 3);
 
 -- 1. Get all customers and their addresses
+SELECT * FROM customers
+JOIN addresses ON customers.id = addresses.customer_id;
+
+-- 2.
+SELECT * FROM orders
+JOIN line_items ON orders.id = line_items.order_id;
+
+-- 3.
+SELECT * FROM warehouse
+JOIN warehouse_product ON warehouse.id = warehouse_product.warehouse_id
+JOIN products ON warehouse_product.product_id = products.id
+WHERE products.description = 'cheetos';
+
+-- 4.
+SELECT * FROM warehouse
+JOIN warehouse_product ON warehouse.id = warehouse_product.warehouse_id
+JOIN products ON warehouse_product.product_id = products.id
+WHERE products.description = 'diet pepsi';
+
+-- 5.
+SELECT COUNT(*), customers.first_name FROM orders
+JOIN addresses ON orders.address_id = addresses.id
+JOIN customers ON addresses.customer_id = customers.id
+GROUP BY customers.id;
+
+-- 6.
+SELECT COUNT(*) FROM customers;
+
+-- 7. 
+SELECT COUNT(*) FROM products;
+
+-- 8.
